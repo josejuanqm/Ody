@@ -45,7 +45,7 @@ Just drag and drop both Ody file into your project
   view.odytizeAllWithCustomImage(url: String, loaderColor: UIColor)
 ```
 
-### Instantiate a new UIImageView
+### Instantiating a new UIImageView
 ```swift
   UIImageView(loaderColor: UIColor, frame: CGRect)
   UIImageView(loaderColor: UIColor, frame: CGRect, grayscale: Bool, category: ImageCategory, text: String)
