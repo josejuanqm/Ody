@@ -18,7 +18,7 @@ Just drag and drop both Ody file into your project
 
 ## Usage
 
-#### if you are using autolayout be sure to call it in viewDidAppear
+#### If you are using AutoLayout please call after the view appears or in ViewDidAppear method
 
 ### From a UIImageView
 ```swift
