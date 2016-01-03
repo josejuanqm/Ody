@@ -1,4 +1,4 @@
-# Silo
+# Ody
 
 Ody is an easy to use random image generator built with Swift.
 
