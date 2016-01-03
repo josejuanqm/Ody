@@ -55,13 +55,11 @@ public extension UIView{
     }
     
     /// (Best use if UIView) Look for UIImageViews inside this view and odytize them with a custom grayscale image
-    func odytizeAllToGrayscale(){
-        let grayscale: Bool = true, category: ImageCategory = .NotSet, text: String = "", loaderColor: UIColor = UIColor.darkGrayColor()
+    func odytizeAllToGrayscale(category: ImageCategory = .NotSet, text: String = ""){
         for v in self.subviews{
             if v is UIImageView{
                 let vi = v as! UIImageView
-                vi.odytize(grayscale, category: category, text: text)
-                vi.setLoaderColorForOdyView(loaderColor)
+                vi.odytize(true, category: category, text: text)
             }
         }
     }
@@ -115,10 +113,10 @@ public extension UIImageView{
     }
     
     /// Odytize UIImageView with a grayscale image
-    func odytizeGrayscale(grayscale: Bool = true, category: ImageCategory = .NotSet, text: String = ""){
+    func odytizeGrayscale(category: ImageCategory = .NotSet, text: String = ""){
         let ody = Ody()
         let size = [SizeDict.Width: self.bounds.width, SizeDict.Height: self.bounds.height]
-        self.toOdyView(ody.getRandomImage(size, grayscale: grayscale, category: category, text: text))
+        self.toOdyView(ody.getRandomImage(size, grayscale: true, category: category, text: text))
     }
     
     /// Odytize UIImageView with a grayscale image
