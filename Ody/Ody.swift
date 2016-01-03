@@ -2,17 +2,16 @@
 //  Ody.swift
 //  Ody
 //
-//  Created by Jose Quintero on 1/3/16.
+//  Created by Jose Quintero on 1/2/16.
 //  Copyright © 2016 Quintero. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-public extension UIView{
-    /// (Best use if UIView) Look for UIImageViews inside this view and odytize them with a custom image from a URL
+public extension UIViewController{
     func odytizeAllWithCustomImage(url: String){
-        for v in self.subviews{
+        for v in self.view.subviews{
             if v is UIImageView{
                 let vi = v as! UIImageView
                 vi.odytizeWithCustomImage(url)
@@ -20,9 +19,8 @@ public extension UIView{
             }
         }
     }
-    /// (Best use if UIView) Look for UIImageViews inside this view and odytize them with a custom image from a URL
     func odytizeAllWithCustomImage(url: String, loaderColor: UIColor){
-        for v in self.subviews{
+        for v in self.view.subviews{
             if v is UIImageView{
                 let vi = v as! UIImageView
                 vi.odytizeWithCustomImage(url)
@@ -30,10 +28,8 @@ public extension UIView{
             }
         }
     }
-    
-    /// (Best use if UIView) Look for UIImageViews inside this view and odytize them with a custom image
     func odytizeAll(grayscale: Bool = false, category: ImageCategory = .NotSet, text: String = "", loaderColor: UIColor = UIColor.darkGrayColor()){
-        for v in self.subviews{
+        for v in self.view.subviews{
             if v is UIImageView{
                 let vi = v as! UIImageView
                 vi.odytize(grayscale, category: category, text: text)
@@ -41,11 +37,9 @@ public extension UIView{
             }
         }
     }
-    
-    /// (Best use if UIView) Look for UIImageViews inside this view and odytize them with a custom image
     func odytizeAll(loaderColor: UIColor){
         let grayscale: Bool = false, category: ImageCategory = .NotSet, text: String = ""
-        for v in self.subviews{
+        for v in self.view.subviews{
             if v is UIImageView{
                 let vi = v as! UIImageView
                 vi.odytize(grayscale, category: category, text: text)
@@ -53,21 +47,19 @@ public extension UIView{
             }
         }
     }
-    
-    /// (Best use if UIView) Look for UIImageViews inside this view and odytize them with a custom grayscale image
-    func odytizeAllToGrayscale(category: ImageCategory = .NotSet, text: String = ""){
-        for v in self.subviews{
+    func odytizeAllToGrayscale(){
+        let grayscale: Bool = true, category: ImageCategory = .NotSet, text: String = "", loaderColor: UIColor = UIColor.darkGrayColor()
+        for v in self.view.subviews{
             if v is UIImageView{
                 let vi = v as! UIImageView
-                vi.odytize(true, category: category, text: text)
+                vi.odytize(grayscale, category: category, text: text)
+                vi.setLoaderColorForOdyView(loaderColor)
             }
         }
     }
-    
-    /// (Best use if UIView) Look for UIImageViews inside this view and odytize them with a custom grayscale image
     func odytizeAllToGrayscale(loaderColor: UIColor){
         let grayscale: Bool = true, category: ImageCategory = .NotSet, text: String = ""
-        for v in self.subviews{
+        for v in self.view.subviews{
             if v is UIImageView{
                 let vi = v as! UIImageView
                 vi.odytize(grayscale, category: category, text: text)
@@ -79,7 +71,18 @@ public extension UIView{
 
 public extension UIImageView{
     
-    /// Set the loader color that shows when the image is loading
+    convenience init(loaderColor: UIColor, frame: CGRect, grayscale: Bool, category: ImageCategory, text: String){
+        self.init(frame: frame)
+        self.odytize(grayscale, category: category, text: text)
+        self.setLoaderColorForOdyView(loaderColor)
+    }
+    
+    convenience init(loaderColor: UIColor, frame: CGRect){
+        self.init(frame: frame)
+        self.odytize()
+        self.setLoaderColorForOdyView(loaderColor)
+    }
+    
     func setLoaderColorForOdyView(color: UIColor) -> Bool{
         for i in 0..<self.subviews.count{
             if let sView = self.subviews[i] as? OdyView{
@@ -105,36 +108,10 @@ public extension UIImageView{
         self.addSubview(odyView)
     }
     
-    /// Odytize UIImageView
     func odytize(grayscale: Bool = false, category: ImageCategory = .NotSet, text: String = ""){
         let ody = Ody()
         let size = [SizeDict.Width: self.bounds.width, SizeDict.Height: self.bounds.height]
         self.toOdyView(ody.getRandomImage(size, grayscale: grayscale, category: category, text: text))
-    }
-    
-    /// Odytize UIImageView with a grayscale image
-    func odytizeGrayscale(category: ImageCategory = .NotSet, text: String = ""){
-        let ody = Ody()
-        let size = [SizeDict.Width: self.bounds.width, SizeDict.Height: self.bounds.height]
-        self.toOdyView(ody.getRandomImage(size, grayscale: true, category: category, text: text))
-    }
-    
-    /// Odytize UIImageView with a grayscale image
-    func odytizeGrayscale(loaderColor: UIColor){
-        let grayscale: Bool = true, category: ImageCategory = .NotSet, text: String = ""
-        let ody = Ody()
-        let size = [SizeDict.Width: self.bounds.width, SizeDict.Height: self.bounds.height]
-        self.toOdyView(ody.getRandomImage(size, grayscale: grayscale, category: category, text: text))
-        self.setLoaderColorForOdyView(loaderColor)
-    }
-    
-    /// Odytize UIImageView
-    func odytize(loaderColor: UIColor){
-        let grayscale: Bool = false, category: ImageCategory = .NotSet, text: String = ""
-        let ody = Ody()
-        let size = [SizeDict.Width: self.bounds.width, SizeDict.Height: self.bounds.height]
-        self.toOdyView(ody.getRandomImage(size, grayscale: grayscale, category: category, text: text))
-        self.setLoaderColorForOdyView(loaderColor)
     }
     
     private func odytizeWithCustomImage(url: String){
@@ -196,7 +173,8 @@ internal class OdyView: UIView, NSURLSessionDelegate{
     }
     
     func createDownloadTask(url: String) {
-        let downloadRequest = NSMutableURLRequest(URL: NSURL(string: url)!)
+        let urls = url.stringByReplacingOccurrencesOfString(" ", withString: "-", options: NSStringCompareOptions.LiteralSearch, range: nil)
+        let downloadRequest = NSMutableURLRequest(URL: NSURL(string: urls)!)
         let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration(), delegate: self, delegateQueue: NSOperationQueue.mainQueue())
         
         downloadTask = session.downloadTaskWithRequest(downloadRequest)
