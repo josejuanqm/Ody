@@ -16,9 +16,9 @@ Download from [here] [dld]
 
 Just drag and drop both Ody file into your project
 
-### Usage
+## Usage
 
-# From a UIImageView
+### From a UIImageView
 ```swift
   imageView.odytizeGrayscale()
   imageView.odytizeGrayscale(loaderColor: UIColor)
@@ -26,9 +26,12 @@ Just drag and drop both Ody file into your project
   imageView.odytize()
   imageView.odytize(loaderColor: UIColor)
   imageView.odytize(grayscale: Bool, category: ImageCategory, text: String)
+  
+  //To change loader color after odytizing
+  imageView.setLoaderColorForOdyView(UIColor)
 ```
 
-# From a UIView
+### From a UIView
 ```swift
   view.odytizeAll()
   view.odytizeAll(loaderColor: UIColor)
