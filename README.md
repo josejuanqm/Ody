@@ -25,7 +25,7 @@ odytizeAll()
 Download from [here] [dld]
 - import the Swift File
 
-Just drag and drop both Ody file into your project
+Just drag and drop Ody.swift file into your project
 
 ## Usage
 ---
