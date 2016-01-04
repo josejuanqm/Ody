@@ -45,7 +45,7 @@ Just drag and drop Ody.swift file into your project
   imageView.setLoaderColorForOdyView(UIColor)
 ```
 
-### From a UIView
+### From a UIView (Odytizes every UIImageView within the UIView)
 ```swift
   view.odytizeAll()
   view.odytizeAll(loaderColor: UIColor)
