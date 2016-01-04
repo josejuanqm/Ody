@@ -7,15 +7,20 @@ Perfect for placeholders!
 Built with [Silo] [silojq] and [LoremPixel] [images].
 
 ### Demo
+---
 
---- ``odytizeAll()`` --->
+```swift 
+odytizeAll()
+``` 
 
 ![alt tag] (https://i.imgur.com/x4oC6we.png)  ![alt tag] (https://i.imgur.com/xeLBKIY.gif)
 
 ### Version
+---
 1.0
 
 ### Installation
+---
 
 Download from [here] [dld]
 - import the Swift File
@@ -23,6 +28,7 @@ Download from [here] [dld]
 Just drag and drop both Ody file into your project
 
 ## Usage
+---
 
 #### If you are using AutoLayout please call after the view appears or in ViewDidAppear method
 
@@ -56,6 +62,24 @@ Just drag and drop both Ody file into your project
   UIImageView(loaderColor: UIColor, frame: CGRect)
   UIImageView(loaderColor: UIColor, frame: CGRect, grayscale: Bool, category: ImageCategory, text: String)
 ```
+
+### ImageCategory Enum
+
+| enum case  | Example  |
+| :------------: |:---------------:|
+| ``ImageCategory.Abstract``     | ![alt tag] (http://lorempixel.com/400/200/abstract) |
+| ``ImageCategory.Animals``     | ![alt tag] (http://lorempixel.com/400/200/animals) |
+| ``ImageCategory.Business`` | ![alt tag] (http://lorempixel.com/400/200/business) |
+|``ImageCategory.Cats``| ![alt tag] (http://lorempixel.com/400/200/cats) |
+|``ImageCategory.City``| ![alt tag] (http://lorempixel.com/400/200/city) |
+|``ImageCategory.Food``| ![alt tag] (http://lorempixel.com/400/200/food)|
+|``ImageCategory.Nightlife``| ![alt tag] (http://lorempixel.com/400/200/nightlife)|
+|``ImageCategory.Fashion``| ![alt tag] (http://lorempixel.com/400/200/fashion)|
+|``ImageCategory.People``| ![alt tag] (http://lorempixel.com/400/200/people)|
+|``ImageCategory.Nature``| ![alt tag] (http://lorempixel.com/400/200/nature)|
+|``ImageCategory.Sports``| ![alt tag] (http://lorempixel.com/400/200/sports)|
+|``ImageCategory.Technics``| ![alt tag] (http://lorempixel.com/400/200/technics)|
+|``ImageCategory.Transport``| ![alt tag] (http://lorempixel.com/400/200/transport)|
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
