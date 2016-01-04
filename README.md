@@ -6,6 +6,12 @@ Perfect for placeholders!
 
 Built with [Silo] [silojq] and [LoremPixel] [images].
 
+### Demo
+
+--- ``odytizeAll()`` --->
+
+![alt tag] (https://i.imgur.com/x4oC6we.png)  ![alt tag] (https://i.imgur.com/xeLBKIY.gif)
+
 ### Version
 1.0
 
