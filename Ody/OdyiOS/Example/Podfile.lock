@@ -1,0 +1,21 @@
+PODS:
+  - FBSnapshotTestCase (2.0.7):
+    - FBSnapshotTestCase/SwiftSupport (= 2.0.7)
+  - FBSnapshotTestCase/Core (2.0.7)
+  - FBSnapshotTestCase/SwiftSupport (2.0.7):
+    - FBSnapshotTestCase/Core
+  - OdyiOS (0.1.0)
+
+DEPENDENCIES:
+  - FBSnapshotTestCase
+  - OdyiOS (from `../`)
+
+EXTERNAL SOURCES:
+  OdyiOS:
+    :path: ../
+
+SPEC CHECKSUMS:
+  FBSnapshotTestCase: 7e85180d0d141a0cf472352edda7e80d7eaeb547
+  OdyiOS: dea2324ef620afd6922ae5b8059ccef3c2af6261
+
+COCOAPODS: 0.39.0

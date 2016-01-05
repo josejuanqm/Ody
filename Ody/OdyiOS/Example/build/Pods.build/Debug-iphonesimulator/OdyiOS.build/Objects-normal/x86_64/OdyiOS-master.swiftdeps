@@ -1,0 +1,5 @@
+version: "Apple Swift version 2.1.1 (swiftlang-700.1.101.15 clang-700.1.81)"
+options: "8d6a9775eca5b3bbffdbd4cb34dd6868"
+build_time: [505343329, 273473000]
+inputs:
+  "/Users/josequintero/Documents/Personal/Git/Ody/Ody/OdyiOS/Pod/Classes/Ody.swift": [505342343, 0]

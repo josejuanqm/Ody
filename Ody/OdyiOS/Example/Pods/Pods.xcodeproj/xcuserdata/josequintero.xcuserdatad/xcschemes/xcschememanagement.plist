@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>FBSnapshotTestCase.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>OdyiOS-OdyiOS.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>OdyiOS.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-OdyiOS_Example.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-OdyiOS_Tests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>0A8C3F2970F3BF14CD5518F894CCCEE9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4FD0022F3187FB0E3B228C6E96124E27</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A5C935B614DD08342117AD0B06959CB9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E7A86F3945DFC6EEA6E2901FA3744C27</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FD40A5559D19C86C1B148490E89C4F27</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

@@ -1,0 +1,10 @@
+framework module OdyiOS {
+  umbrella header "OdyiOS-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module OdyiOS.__Swift {
+    exclude header "OdyiOS-Swift.h"
+}

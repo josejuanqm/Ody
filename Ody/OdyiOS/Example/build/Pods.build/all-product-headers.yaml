@@ -1,0 +1,33 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [
+    {
+      'type': 'directory',
+      'name': "/Users/josequintero/Documents/Personal/Git/Ody/Ody/OdyiOS/Example/build/Debug-iphonesimulator/OdyiOS.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "OdyiOS-Swift.h",
+          'external-contents': "/Users/josequintero/Documents/Personal/Git/Ody/Ody/OdyiOS/Example/build/Debug-iphonesimulator/OdyiOS.framework/Headers/OdyiOS-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "OdyiOS-umbrella.h",
+          'external-contents': "/Users/josequintero/Documents/Personal/Git/Ody/Ody/OdyiOS/Example/Pods/Target Support Files/OdyiOS/OdyiOS-umbrella.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/josequintero/Documents/Personal/Git/Ody/Ody/OdyiOS/Example/build/Debug-iphonesimulator/OdyiOS.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/josequintero/Documents/Personal/Git/Ody/Ody/OdyiOS/Example/build/Pods.build/Debug-iphonesimulator/OdyiOS.build/module.modulemap"
+        }
+      ]
+    }
+  ]
+}
