@@ -37,6 +37,16 @@ public extension UIViewController{
             }
         }
     }
+    func odytizeAll(category: ImageCategory){
+        let grayscale: Bool = false, loaderColor: UIColor = UIColor.darkGrayColor(), text: String = ""
+        for v in self.view.subviews{
+            if v is UIImageView{
+                let vi = v as! UIImageView
+                vi.odytize(grayscale, category: category, text: text)
+                vi.setLoaderColorForOdyView(loaderColor)
+            }
+        }
+    }
     func odytizeAll(loaderColor: UIColor){
         let grayscale: Bool = false, category: ImageCategory = .NotSet, text: String = ""
         for v in self.view.subviews{
@@ -108,6 +118,22 @@ public extension UIImageView{
         self.addSubview(odyView)
     }
     
+    func odytize(loaderColor: UIColor){
+        let category: ImageCategory = .NotSet
+        let grayscale: Bool = false, loaderColor: UIColor = UIColor.darkGrayColor(), text: String = ""
+        let ody = Ody()
+        let size = [SizeDict.Width: self.bounds.width, SizeDict.Height: self.bounds.height]
+        self.toOdyView(ody.getRandomImage(size, grayscale: grayscale, category: category, text: text))
+        self.setLoaderColorForOdyView(loaderColor)
+    }
+    
+    func odytize(category: ImageCategory){
+        let grayscale: Bool = false, text: String = ""
+        let ody = Ody()
+        let size = [SizeDict.Width: self.bounds.width, SizeDict.Height: self.bounds.height]
+        self.toOdyView(ody.getRandomImage(size, grayscale: grayscale, category: category, text: text))
+    }
+    
     func odytize(grayscale: Bool = false, category: ImageCategory = .NotSet, text: String = ""){
         let ody = Ody()
         let size = [SizeDict.Width: self.bounds.width, SizeDict.Height: self.bounds.height]
@@ -134,6 +160,7 @@ public enum ImageCategory: String {
     case Sports = "sports"
     case Technics = "technics"
     case Transport = "transport"
+    case FillDunphy = "filldunphy"
 }
 
 public enum SizeDict: String{
@@ -249,6 +276,10 @@ internal class Ody{
     }
     
     internal func getRandomImage(size: Dictionary<SizeDict, CGFloat>! = [.Width: 200, .Height: 200], grayscale: Bool = false, category: ImageCategory = .NotSet, text: String = "") -> String{
-        return("http://lorempixel.com/\(grayscale ? "g/" : "")\(Int(size[SizeDict.Width]!))/\(Int(size[SizeDict.Height]!))\(category.rawValue == "" ? "" : "/" + category.rawValue + "/")\(text)")
+        if category != .FillDunphy{
+            return("http://lorempixel.com/\(grayscale ? "g/" : "")\(Int(size[SizeDict.Width]!))/\(Int(size[SizeDict.Height]!))\(category.rawValue == "" ? "" : "/" + category.rawValue + "/")\(text)")
+        }else{
+            return("http://filldunphy.com/\(Int(size[SizeDict.Width]!))/\(Int(size[SizeDict.Height]!))")
+        }
     }
 }
