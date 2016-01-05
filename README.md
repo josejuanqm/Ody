@@ -4,7 +4,7 @@ Ody is an easy to use random image generator built with Swift.
 
 Perfect for placeholders!
 
-Built with [Silo] [silojq] and [LoremPixel] [images].
+Built with [Silo] [silojq], [LoremPixel] [images], and [FillDunphy] [filldunphy].
 
 ### Demo
 ---
@@ -82,7 +82,7 @@ Just drag and drop Ody.swift file into your project
 |``ImageCategory.Sports``| ![alt tag] (http://lorempixel.com/400/200/sports)|
 |``ImageCategory.Technics``| ![alt tag] (http://lorempixel.com/400/200/technics)|
 |``ImageCategory.Transport``| ![alt tag] (http://lorempixel.com/400/200/transport)|
-|``ImageCategory.FillDunphy``| ![alt tag] (http://filldunphy.com/400/200) |
+|``ImageCategory.FillDunphy`` (does not support grayscale) | ![alt tag] (http://filldunphy.com/400/200) |
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
@@ -90,5 +90,6 @@ Just drag and drop Ody.swift file into your project
    [dld]: <https://github.com/josejuanqm/Ody/blob/master/Ody/Ody.swift.zip?raw=true>
    [silojq]: <https://github.com/josejuanqm/Silo>
    [images]: <http://lorempixel.com/>
+   [filldunphy]: <http://filldunphy.com>
 
 
