@@ -27,16 +27,18 @@ Built with Silo, LoremPixel, and FillDunphy.
   s.homepage         = "https://github.com/josejuanqm/Ody"
   s.license          = 'MIT'
   s.author           = { "Jose Quintero" => "jose.juan.qm@gmail.com" }
-  s.source           = { :git => "https://github.com/josejuanqm/Ody/OdyiOS.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/josejuanqm'
+  s.source           = { :git => "https://github.com/josejuanqm/Ody.git", :tag => s.version.to_s }
+  s.social_media_url = 'https://twitter.com/josejuanqm'
 
   s.platform     = :ios, '8.0'
   s.requires_arc = true
 
-  s.source_files = 'Pod/Classes/**/*'
+  s.source_files = 'OdyiOS/Pod/Classes/**/*'
   s.resource_bundles = {
     'OdyiOS' => ['OdyiOS/Pod/Assets/*.png']
   }
+
+sna.prefix_header_contents = ''
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
