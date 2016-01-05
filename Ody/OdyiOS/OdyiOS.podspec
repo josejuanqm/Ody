@@ -33,9 +33,9 @@ Built with Silo, LoremPixel, and FillDunphy.
   s.platform     = :ios, '8.0'
   s.requires_arc = true
 
-  s.source_files = 'OdyiOS/Pod/Classes/**/*'
+  s.source_files = 'Ody/OdyiOS/Pod/Classes/**/*'
   s.resource_bundles = {
-    'OdyiOS' => ['OdyiOS/Pod/Assets/*.png']
+    'OdyiOS' => ['Ody/OdyiOS/Pod/Assets/*.png']
   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
