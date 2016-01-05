@@ -1,5 +1,9 @@
 # Ody
 
+[![Version](https://img.shields.io/cocoapods/v/OdyiOS.svg?style=flat)](http://cocoapods.org/pods/OdyiOS)
+[![License](https://img.shields.io/cocoapods/l/OdyiOS.svg?style=flat)](http://cocoapods.org/pods/OdyiOS)
+[![Platform](https://img.shields.io/cocoapods/p/OdyiOS.svg?style=flat)](http://cocoapods.org/pods/OdyiOS)
+
 Ody is an easy to use random image generator built with Swift.
 
 Perfect for placeholders!
@@ -17,10 +21,21 @@ odytizeAll()
 
 ### Version
 ---
-1.0
+1.1
+
+[changelog](https://github.com/josejuanqm/Ody#changelog)
 
 ### Installation
 ---
+
+Ody is available through [CocoaPods](http://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+```ruby
+pod "OdyiOS"
+```
+
+---or---
 
 Download from [here] [dld]
 - import the Swift File
@@ -83,6 +98,16 @@ Just drag and drop Ody.swift file into your project
 |``ImageCategory.Technics``| ![alt tag] (http://lorempixel.com/400/200/technics)|
 |``ImageCategory.Transport``| ![alt tag] (http://lorempixel.com/400/200/transport)|
 |``ImageCategory.FillDunphy`` (does not support grayscale) | ![alt tag] (http://filldunphy.com/400/200) |
+
+
+### Changelog
+1.1
+
+* Added Support for CocoaPods
+
+1.0
+
+* Initial version
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
