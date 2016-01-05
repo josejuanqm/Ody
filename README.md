@@ -39,6 +39,7 @@ Just drag and drop Ody.swift file into your project
   imageView.odytizeGrayscale(category: ImageCategory, text: String)
   imageView.odytize()
   imageView.odytize(loaderColor: UIColor)
+  imageView.odytize(category: ImageCategory)
   imageView.odytize(grayscale: Bool, category: ImageCategory, text: String)
   
   //To change loader color after odytizing
@@ -52,7 +53,7 @@ Just drag and drop Ody.swift file into your project
   view.odytizeAll(grayscale: Bool, category: ImageCategory, text: String, loaderColor: UIColor)
   view.odytizeAllToGrayscale()
   view.odytizeAllToGrayscale(loaderColor: UIColor)
-  view.odytizeAllToGrayscale(category: ImageCategory, text: String)
+  view.odytizeAllToGrayscale(category: ImageCategory)
   view.odytizeAllWithCustomImage(url: String)
   view.odytizeAllWithCustomImage(url: String, loaderColor: UIColor)
 ```
@@ -60,6 +61,7 @@ Just drag and drop Ody.swift file into your project
 ### Instantiating a new UIImageView
 ```swift
   UIImageView(loaderColor: UIColor, frame: CGRect)
+  UIImageView(category: ImageCategory, frame: CGRect)
   UIImageView(loaderColor: UIColor, frame: CGRect, grayscale: Bool, category: ImageCategory, text: String)
 ```
 
