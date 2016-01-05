@@ -77,6 +77,16 @@ public extension UIViewController{
             }
         }
     }
+    func odytizeAllToGrayscale(category: ImageCategory){
+        let grayscale: Bool = true, text: String = "", loaderColor: UIColor = UIColor.darkGrayColor()
+        for v in self.view.subviews{
+            if v is UIImageView{
+                let vi = v as! UIImageView
+                vi.odytize(grayscale, category: category, text: text)
+                vi.setLoaderColorForOdyView(loaderColor)
+            }
+        }
+    }
 }
 
 public extension UIImageView{
@@ -91,6 +101,11 @@ public extension UIImageView{
         self.init(frame: frame)
         self.odytize()
         self.setLoaderColorForOdyView(loaderColor)
+    }
+    
+    convenience init(category: ImageCategory, frame: CGRect){
+        self.init(frame: frame)
+        self.odytize(category: category)
     }
     
     func setLoaderColorForOdyView(color: UIColor) -> Bool{
@@ -118,9 +133,33 @@ public extension UIImageView{
         self.addSubview(odyView)
     }
     
+    func odytizeGrayscale(){
+        let category : ImageCategory = .NotSet
+        let grayscale: Bool = false, text: String = ""
+        let ody = Ody()
+        let size = [SizeDict.Width: self.bounds.width, SizeDict.Height: self.bounds.height]
+        self.toOdyView(ody.getRandomImage(size, grayscale: grayscale, category: category, text: text))
+    }
+    
+    func odytizeGrayscale(loaderColor: UIColor){
+        let category: ImageCategory = .NotSet
+        let grayscale: Bool = true, text: String = ""
+        let ody = Ody()
+        let size = [SizeDict.Width: self.bounds.width, SizeDict.Height: self.bounds.height]
+        self.toOdyView(ody.getRandomImage(size, grayscale: grayscale, category: category, text: text))
+        self.setLoaderColorForOdyView(loaderColor)
+    }
+    
+    func odytizeGrayscale(category: ImageCategory){
+        let grayscale: Bool = true, text: String = ""
+        let ody = Ody()
+        let size = [SizeDict.Width: self.bounds.width, SizeDict.Height: self.bounds.height]
+        self.toOdyView(ody.getRandomImage(size, grayscale: grayscale, category: category, text: text))
+    }
+    
     func odytize(loaderColor: UIColor){
         let category: ImageCategory = .NotSet
-        let grayscale: Bool = false, loaderColor: UIColor = UIColor.darkGrayColor(), text: String = ""
+        let grayscale: Bool = false, text: String = ""
         let ody = Ody()
         let size = [SizeDict.Width: self.bounds.width, SizeDict.Height: self.bounds.height]
         self.toOdyView(ody.getRandomImage(size, grayscale: grayscale, category: category, text: text))
