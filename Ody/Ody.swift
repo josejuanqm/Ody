@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 public extension UIViewController{
-    func odytizeAllWithCustomImage(url: String){
+    func odytizeAllWithCustomImage(_ url: String){
         for v in self.view.subviews{
             if v is UIImageView{
                 let vi = v as! UIImageView
@@ -19,7 +19,7 @@ public extension UIViewController{
             }
         }
     }
-    func odytizeAllWithCustomImage(url: String, loaderColor: UIColor){
+    func odytizeAllWithCustomImage(_ url: String, loaderColor: UIColor){
         for v in self.view.subviews{
             if v is UIImageView{
                 let vi = v as! UIImageView
@@ -28,7 +28,7 @@ public extension UIViewController{
             }
         }
     }
-    func odytizeAll(grayscale: Bool = false, category: ImageCategory = .NotSet, text: String = "", loaderColor: UIColor = UIColor.darkGrayColor()){
+    func odytizeAll(_ grayscale: Bool = false, category: ImageCategory = .NotSet, text: String = "", loaderColor: UIColor = UIColor.darkGray){
         for v in self.view.subviews{
             if v is UIImageView{
                 let vi = v as! UIImageView
@@ -37,8 +37,8 @@ public extension UIViewController{
             }
         }
     }
-    func odytizeAll(category: ImageCategory){
-        let grayscale: Bool = false, loaderColor: UIColor = UIColor.darkGrayColor(), text: String = ""
+    func odytizeAll(_ category: ImageCategory){
+        let grayscale: Bool = false, loaderColor: UIColor = UIColor.darkGray, text: String = ""
         for v in self.view.subviews{
             if v is UIImageView{
                 let vi = v as! UIImageView
@@ -47,7 +47,7 @@ public extension UIViewController{
             }
         }
     }
-    func odytizeAll(loaderColor: UIColor){
+    func odytizeAll(_ loaderColor: UIColor){
         let grayscale: Bool = false, category: ImageCategory = .NotSet, text: String = ""
         for v in self.view.subviews{
             if v is UIImageView{
@@ -58,7 +58,7 @@ public extension UIViewController{
         }
     }
     func odytizeAllToGrayscale(){
-        let grayscale: Bool = true, category: ImageCategory = .NotSet, text: String = "", loaderColor: UIColor = UIColor.darkGrayColor()
+        let grayscale: Bool = true, category: ImageCategory = .NotSet, text: String = "", loaderColor: UIColor = UIColor.darkGray
         for v in self.view.subviews{
             if v is UIImageView{
                 let vi = v as! UIImageView
@@ -67,7 +67,7 @@ public extension UIViewController{
             }
         }
     }
-    func odytizeAllToGrayscale(loaderColor: UIColor){
+    func odytizeAllToGrayscale(_ loaderColor: UIColor){
         let grayscale: Bool = true, category: ImageCategory = .NotSet, text: String = ""
         for v in self.view.subviews{
             if v is UIImageView{
@@ -77,8 +77,8 @@ public extension UIViewController{
             }
         }
     }
-    func odytizeAllToGrayscale(category: ImageCategory){
-        let grayscale: Bool = true, text: String = "", loaderColor: UIColor = UIColor.darkGrayColor()
+    func odytizeAllToGrayscale(_ category: ImageCategory){
+        let grayscale: Bool = true, text: String = "", loaderColor: UIColor = UIColor.darkGray
         for v in self.view.subviews{
             if v is UIImageView{
                 let vi = v as! UIImageView
@@ -108,7 +108,7 @@ public extension UIImageView{
         self.odytize(category: category)
     }
     
-    func setLoaderColorForOdyView(color: UIColor) -> Bool{
+    func setLoaderColorForOdyView(_ color: UIColor) -> Bool{
         for i in 0..<self.subviews.count{
             if let sView = self.subviews[i] as? OdyView{
                 sView.loaderColor = color
@@ -118,7 +118,7 @@ public extension UIImageView{
         return false
     }
     
-    private func toOdyView(withUrl: String){
+    fileprivate func toOdyView(_ withUrl: String){
         for i in 0..<self.subviews.count{
             if let sView = self.subviews[i] as? OdyView{
                 if sView.url == withUrl{
@@ -129,9 +129,9 @@ public extension UIImageView{
         }
         self.clipsToBounds = false
         let cM = self
-        let odyView = OdyView(frame: CGRectMake(0, 0, cM.bounds.width, cM.bounds.height))
+        let odyView = OdyView(frame: CGRect(x: 0, y: 0, width: cM.bounds.width, height: cM.bounds.height))
         odyView.backgroundColor = self.backgroundColor
-        odyView.opaque = false
+        odyView.isOpaque = false
         odyView.fetch(withUrl, parent: cM)
         self.addSubview(odyView)
     }
@@ -144,7 +144,7 @@ public extension UIImageView{
         self.toOdyView(ody.getRandomImage(size, grayscale: grayscale, category: category, text: text))
     }
     
-    func odytizeGrayscale(loaderColor: UIColor){
+    func odytizeGrayscale(_ loaderColor: UIColor){
         let category: ImageCategory = .NotSet
         let grayscale: Bool = true, text: String = ""
         let ody = Ody()
@@ -153,14 +153,14 @@ public extension UIImageView{
         self.setLoaderColorForOdyView(loaderColor)
     }
     
-    func odytizeGrayscale(category: ImageCategory){
+    func odytizeGrayscale(_ category: ImageCategory){
         let grayscale: Bool = true, text: String = ""
         let ody = Ody()
         let size = [SizeDict.Width: self.bounds.width, SizeDict.Height: self.bounds.height]
         self.toOdyView(ody.getRandomImage(size, grayscale: grayscale, category: category, text: text))
     }
     
-    func odytize(loaderColor: UIColor){
+    func odytize(_ loaderColor: UIColor){
         let category: ImageCategory = .NotSet
         let grayscale: Bool = false, text: String = ""
         let ody = Ody()
@@ -169,20 +169,20 @@ public extension UIImageView{
         self.setLoaderColorForOdyView(loaderColor)
     }
     
-    func odytize(category: ImageCategory){
+    func odytize(_ category: ImageCategory){
         let grayscale: Bool = false, text: String = ""
         let ody = Ody()
         let size = [SizeDict.Width: self.bounds.width, SizeDict.Height: self.bounds.height]
         self.toOdyView(ody.getRandomImage(size, grayscale: grayscale, category: category, text: text))
     }
     
-    func odytize(grayscale: Bool = false, category: ImageCategory = .NotSet, text: String = ""){
+    func odytize(_ grayscale: Bool = false, category: ImageCategory = .NotSet, text: String = ""){
         let ody = Ody()
         let size = [SizeDict.Width: self.bounds.width, SizeDict.Height: self.bounds.height]
         self.toOdyView(ody.getRandomImage(size, grayscale: grayscale, category: category, text: text))
     }
     
-    private func odytizeWithCustomImage(url: String){
+    fileprivate func odytizeWithCustomImage(_ url: String){
         self.toOdyView(url)
     }
 }
@@ -210,19 +210,19 @@ public enum SizeDict: String{
     case Height = "height"
 }
 
-internal class OdyView: UIView, NSURLSessionDelegate{
+internal class OdyView: UIView, URLSessionDelegate{
     //public
-    var loaderColor: UIColor! = UIColor.darkGrayColor()
+    var loaderColor: UIColor! = UIColor.darkGray
     ///////////////////
     
     //private
-    private var progress: Float! = 0
-    private var runned = true
-    private var url: String!
-    private var parent: UIImageView!
+    fileprivate var progress: Float! = 0
+    fileprivate var runned = true
+    fileprivate var url: String!
+    fileprivate var parent: UIImageView!
     //////////
     
-    internal func fetch(url: String, parent: UIImageView){
+    internal func fetch(_ url: String, parent: UIImageView){
         self.backgroundColor = parent.backgroundColor
         self.url = url
         self.parent = parent
@@ -230,9 +230,9 @@ internal class OdyView: UIView, NSURLSessionDelegate{
         self.setNeedsDisplay()
     }
     
-    private var downloadTask: NSURLSessionDownloadTask?
+    fileprivate var downloadTask: URLSessionDownloadTask?
     
-    override internal func drawRect(rect: CGRect) {
+    override internal func draw(_ rect: CGRect) {
         let bounds = self.bounds
         drawProgressLoader(frame: bounds, shapeColor: self.loaderColor, progressFraction: CGFloat(self.progress))
         if runned == false{
@@ -242,16 +242,16 @@ internal class OdyView: UIView, NSURLSessionDelegate{
         }
     }
     
-    func createDownloadTask(url: String) {
-        let urls = url.stringByReplacingOccurrencesOfString(" ", withString: "-", options: NSStringCompareOptions.LiteralSearch, range: nil)
-        let downloadRequest = NSMutableURLRequest(URL: NSURL(string: urls)!)
-        let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration(), delegate: self, delegateQueue: NSOperationQueue.mainQueue())
+    func createDownloadTask(_ url: String) {
+        let urls = url.replacingOccurrences(of: " ", with: "-", options: NSString.CompareOptions.literal, range: nil)
+        let downloadRequest = URLRequest(url: URL(string: urls)!)
+        let session = Foundation.URLSession(configuration: URLSessionConfiguration.default, delegate: self, delegateQueue: OperationQueue.main)
         
-        downloadTask = session.downloadTaskWithRequest(downloadRequest)
+        downloadTask = session.downloadTask(with: downloadRequest)
         downloadTask!.resume()
     }
     
-    func URLSession(session: NSURLSession, downloadTask: NSURLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
+    func URLSession(_ session: Foundation.URLSession, downloadTask: URLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
         var progressInternal = Float(0)
         if (totalBytesExpectedToWrite != -1){
             progressInternal = Float(totalBytesWritten) / Float(totalBytesExpectedToWrite)
@@ -265,14 +265,14 @@ internal class OdyView: UIView, NSURLSessionDelegate{
         self.setNeedsDisplay()
     }
     
-    func URLSession(session: NSURLSession, downloadTask: NSURLSessionDownloadTask, didFinishDownloadingToURL location: NSURL) {
+    func URLSession(_ session: Foundation.URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingToURL location: URL) {
         self.alpha = 0
-        let img = UIImage(data: NSData(contentsOfURL: location)!)
+        let img = UIImage(data: try! Data(contentsOf: location))
         print(parent)
         self.parent.image = img
     }
     
-    func URLSession(session: NSURLSession, task: NSURLSessionTask, didCompleteWithError error: NSError?) {
+    func URLSession(_ session: Foundation.URLSession, task: URLSessionTask, didCompleteWithError error: NSError?) {
         if error != nil{
             print("fail")
         }
@@ -281,30 +281,30 @@ internal class OdyView: UIView, NSURLSessionDelegate{
 
 extension OdyView{
     
-    func drawProgressLoader(frame frame: CGRect = CGRectMake(0, 0, 200, 200), shapeColor: UIColor = UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 1.000), progressFraction: CGFloat = 0.793) {
+    func drawProgressLoader(frame: CGRect = CGRect(x: 0, y: 0, width: 200, height: 200), shapeColor: UIColor = UIColor(red: 0.000, green: 0.000, blue: 0.000, alpha: 1.000), progressFraction: CGFloat = 0.793) {
         
         //// Variable Declarations
         let expression: CGFloat = progressFraction != 0 ? progressFraction * -360 : 1
         
         
         //// Subframes
-        let group: CGRect = CGRectMake(frame.minX + floor((frame.width - 22) * 0.50000 + 0.5), frame.minY + floor((frame.height - 22) * 0.50000 + 0.5), 22, 22)
+        let group: CGRect = CGRect(x: frame.minX + floor((frame.width - 22) * 0.50000 + 0.5), y: frame.minY + floor((frame.height - 22) * 0.50000 + 0.5), width: 22, height: 22)
         
         
         //// Group
         //// Oval Drawing
-        let ovalPath = UIBezierPath(ovalInRect: CGRectMake(group.minX, group.minY, 22, 22))
+        let ovalPath = UIBezierPath(ovalIn: CGRect(x: group.minX, y: group.minY, width: 22, height: 22))
         shapeColor.setStroke()
         ovalPath.lineWidth = 2.5
         ovalPath.stroke()
         
         
         //// Oval 2 Drawing
-        let oval2Rect = CGRectMake(group.minX + 1, group.minY + 1, 20, 20)
+        let oval2Rect = CGRect(x: group.minX + 1, y: group.minY + 1, width: 20, height: 20)
         let oval2Path = UIBezierPath()
-        oval2Path.addArcWithCenter(CGPointMake(oval2Rect.midX, oval2Rect.midY), radius: oval2Rect.width / 2, startAngle: -1 * CGFloat(M_PI)/180, endAngle: -expression * CGFloat(M_PI)/180, clockwise: true)
-        oval2Path.addLineToPoint(CGPointMake(oval2Rect.midX, oval2Rect.midY))
-        oval2Path.closePath()
+        oval2Path.addArc(withCenter: CGPoint(x: oval2Rect.midX, y: oval2Rect.midY), radius: oval2Rect.width / 2, startAngle: -1 * CGFloat(M_PI)/180, endAngle: -expression * CGFloat(M_PI)/180, clockwise: true)
+        oval2Path.addLine(to: CGPoint(x: oval2Rect.midX, y: oval2Rect.midY))
+        oval2Path.close()
         
         shapeColor.setFill()
         oval2Path.fill()
@@ -318,7 +318,7 @@ internal class Ody{
         
     }
     
-    internal func getRandomImage(size: Dictionary<SizeDict, CGFloat>! = [.Width: 200, .Height: 200], grayscale: Bool = false, category: ImageCategory = .NotSet, text: String = "") -> String{
+    internal func getRandomImage(_ size: Dictionary<SizeDict, CGFloat>! = [.Width: 200, .Height: 200], grayscale: Bool = false, category: ImageCategory = .NotSet, text: String = "") -> String{
         if category != .FillDunphy{
             return("http://lorempixel.com/\(grayscale ? "g/" : "")\(Int(size[SizeDict.Width]!))/\(Int(size[SizeDict.Height]!))\(category.rawValue == "" ? "" : "/" + category.rawValue + "/")\(text)")
         }else{
