@@ -107,6 +107,7 @@
 				TargetAttributes = {
 					111D3B5D1C39A95500031E4F = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -263,6 +264,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.quintero.Ody;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -274,6 +276,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.quintero.Ody;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -296,6 +299,7 @@
 				111D3B721C39A95500031E4F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
